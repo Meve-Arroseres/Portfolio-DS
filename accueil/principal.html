@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr" data-light>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mève Arroseres — Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Mève — Développeuse web junior"
+    />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="principal.css" />
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Aller au contenu</a>
+
+    <!-- NAV BAR -->
+    <nav class="nav" aria-label="Barre de navigation DS">
+      <div class="nav-inner">
+        <div class="brand-wrap">
+          <div class="brand">
+            <a href="#hero" aria-label="Accueil"
+              ><span class="name">Mève</span></a
+            >
+          </div>
+          <span class="divider" aria-hidden="true"></span>
+          <button
+            class="burger"
+            aria-label="Ouvrir le menu"
+            aria-controls="mainmenu"
+            aria-expanded="false"
+          >
+            <span class="bar" aria-hidden="true"></span>
+          </button>
+          <ul id="mainmenu" class="mainmenu" role="menubar">
+            <li role="none">
+              <a role="menuitem" href="../propos/propos.html">À propos</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../parcours/parcours.html">Parcours</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../competences/competences.html"
+                >Compétences</a
+              >
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../projet/projets.html">Projets</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../contact/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="status">
+          <a
+            id="nav-heure"
+            href="../propos/propos.html"
+            class="badge-mini"
+            aria-label="Heure"
+            >--:--</a
+          >
+          <a
+            id="nav-date"
+            href="../parcours/parcours.html"
+            class="badge-mini"
+            aria-label="Date"
+            >--/--</a
+          >
+          <a
+            id="nav-logo"
+            href="../competences/competences.html"
+            class="badge-mini"
+            aria-label="Logo"
+            >M</a
+          >
+          <img src="Batterie.png" class="batterie" alt="Batterie" />
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section id="hero" class="section hero" aria-labelledby="hero-title">
+        <div class="container grid">
+          <div class="hero-left">
+            <img src="photopro.jpg" class="img_pros" />
+            <div class="flex-col">
+              <h1 id="hero-title" class="hero-title">JE SUIS MÈVE ARROSERES</h1>
+              <p class="hero-sub">
+                <span
+                  id="typer"
+                  data-words='["Développeuse Web Junior","Front + un jour Cyber"]'
+                >
+                  Développeuse Web Junior
+                </span>
+              </p>
+              <button id="themeToggle" aria-label="Ajuster la luminosité">
+                🌓
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Panneau secondaire DS -->
+      <nav class="navigation" aria-label="Navigation secondaire">
+        <a href="../propos/propos.html"><img alt="" src="" />À propos</a>
+        <a href="../parcours/parcours.html">Parcours</a>
+        <a href="../competences/competences.html">Compétences</a>
+        <a href="../projet/projets.html">Projets</a>
+        <a href="../contact/contact.html">Contact</a>
+      </nav>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> Mève Arroseres — Tous droits réservés.
+        </p>
+        <ul class="socials">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/m%C3%A8ve-arroseres-77663a24b/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Meve-Arroseres"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </li>
+          <li><a href="#" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // pour nav bar heure et date temps réel
+      (function () {
+        const z = (n) => String(n).padStart(2, "0");
+        const heureEl = document.getElementById("nav-heure");
+        const dateEl = document.getElementById("nav-date");
+        const logoEl = document.getElementById("nav-logo");
+        function tick() {
+          const d = new Date();
+          const h = z(d.getHours()),
+            m = z(d.getMinutes());
+          const day = z(d.getDate()),
+            mon = z(d.getMonth() + 1);
+          if (heureEl) heureEl.textContent = `${h}:${m}`;
+          if (dateEl) dateEl.textContent = `${day}/${mon}`;
+        }
+        tick(); // maj immédiate temps réél
+        setInterval(tick, 30_000);
+        if (logoEl) logoEl.textContent = "M";
+      })();
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // bouton luminosité
+
+      const themeToggle = document.getElementById("themeToggle"); //le bouton
+      const levels = [1, 0.85, 0.7]; // normal → un peu plus sombre → sombre
+      let idx = 0;
+      themeToggle.addEventListener("click", () => {
+        idx = (idx + 1) % levels.length; // 3ᵉ clic = retour à 1
+        document.documentElement.style.setProperty("--luminosite", levels[idx]);
+      });
+
+      // burger menu mobile
+
+      const nav = document.querySelector(".nav");
+      const burger = document.querySelector(".burger");
+      burger?.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        burger.setAttribute("aria-expanded", String(open));
+      });
+    </script>
+  </body>
+</html>

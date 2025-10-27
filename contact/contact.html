@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr" data-light>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mève Arroseres — Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Mève — Développeuse web junior"
+    />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Aller au contenu</a>
+
+    <!-- NAV BAR -->
+    <nav class="nav" aria-label="Barre de navigation DS">
+      <div class="nav-inner">
+        <div class="brand-wrap">
+          <div class="brand">
+            <a href="../accueil/principal.html" aria-label="Accueil"
+              ><span class="name">Mève</span></a
+            >
+          </div>
+          <span class="divider" aria-hidden="true"></span>
+          <button
+            class="burger"
+            aria-label="Ouvrir le menu"
+            aria-controls="mainmenu"
+            aria-expanded="false"
+          >
+            <span class="bar" aria-hidden="true"></span>
+          </button>
+          <ul id="mainmenu" class="mainmenu" role="menubar">
+            <li role="none">
+              <a role="menuitem" href="../propos/propos.html">À propos</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../parcours/parcours.html">Parcours</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../competences/competences.html"
+                >Compétences</a
+              >
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../projet/projets.html">Projets</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../contact/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="status">
+          <a
+            id="nav-heure"
+            href="../propos/propos.html"
+            class="badge-mini"
+            aria-label="Heure"
+            >--:--</a
+          >
+          <a
+            id="nav-date"
+            href="../parcours/parcours.html"
+            class="badge-mini"
+            aria-label="Date"
+            >--/--</a
+          >
+          <a
+            id="nav-logo"
+            href="../competences/competences.html"
+            class="badge-mini"
+            aria-label="Logo"
+            >M</a
+          >
+          <img src="Batterie.png" class="batterie" alt="Batterie" />
+        </div>
+      </div>
+    </nav>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="contact-title" class="title">Contact</h2>
+          <p>Dispo pour une alternance en dev (Marseille et alentours).</p>
+        </header>
+
+        <form
+          id="contactForm"
+          action="https://formspree.io/f/XXXXX"
+          method="POST"
+          novalidate
+        >
+          <input
+            type="text"
+            name="_gotcha"
+            tabindex="-1"
+            autocomplete="off"
+            hidden
+          />
+
+          <div class="field">
+            <label for="name">Nom</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              minlength="2"
+              autocomplete="name"
+            />
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              inputmode="email"
+              autocomplete="email"
+            />
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              required
+              minlength="10"
+              maxlength="1000"
+            ></textarea>
+            <small class="error" aria-live="polite"></small>
+          </div>
+
+          <label class="check" for="consent">
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              value="yes"
+              required
+            />
+            J'accepte une réponse par email.
+          </label>
+
+          <button type="submit" class="btn-primary">Envoyer</button>
+          <p id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> Mève Arroseres — Tous droits réservés.
+        </p>
+        <ul class="socials">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/m%C3%A8ve-arroseres-77663a24b/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Meve-Arroseres"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </li>
+          <li><a href="#" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      /* Heure et date */
+      (function () {
+        const z = (n) => String(n).padStart(2, "0");
+        const heureEl = document.getElementById("nav-heure");
+        const dateEl = document.getElementById("nav-date");
+        const logoEl = document.getElementById("nav-logo");
+
+        function tick() {
+          const d = new Date();
+          const h = z(d.getHours()),
+            m = z(d.getMinutes());
+          const day = z(d.getDate()),
+            mon = z(d.getMonth() + 1);
+          heureEl.textContent = `${h}:${m}`;
+          dateEl.textContent = `${day}/${mon}`;
+        }
+        tick();
+        setInterval(tick, 30_000);
+        if (logoEl) logoEl.textContent = "M";
+      })();
+    </script>
+  </body>
+</html>

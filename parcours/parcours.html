@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr" data-light>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parcours — Mève Arroseres</title>
+    <meta
+      name="description"
+      content="Parcours de Mève — Formations et expériences"
+    />
+    <link rel="icon" type="image/png" href="../img/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="parcours.css" />
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Aller au contenu</a>
+
+    <!-- NAV BAR -->
+    <nav class="nav" aria-label="Barre de navigation DS">
+      <div class="nav-inner">
+        <div class="brand-wrap">
+          <div class="brand">
+            <a href="../accueil/principal.html" aria-label="Accueil"
+              ><span class="name">Mève</span></a
+            >
+          </div>
+          <span class="divider" aria-hidden="true"></span>
+          <button
+            class="burger"
+            aria-label="Ouvrir le menu"
+            aria-controls="mainmenu"
+            aria-expanded="false"
+          >
+            <span class="bar" aria-hidden="true"></span>
+          </button>
+          <ul id="mainmenu" class="mainmenu" role="menubar">
+            <li role="none">
+              <a role="menuitem" href="../propos/propos.html">À propos</a>
+            </li>
+            <li role="none">
+              <a
+                role="menuitem"
+                href="../parcours/parcours.html"
+                class="active"
+                aria-current="page"
+                >Parcours</a
+              >
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../competences/competences.html"
+                >Compétences</a
+              >
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../projet/projets.html">Projets</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../contact/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="status">
+          <a
+            id="nav-heure"
+            href="../propos/propos.html"
+            class="badge-mini"
+            aria-label="Heure"
+            >--:--</a
+          >
+          <a
+            id="nav-date"
+            href="../parcours/parcours.html"
+            class="badge-mini"
+            aria-label="Date"
+            >--/--</a
+          >
+          <a
+            id="nav-logo"
+            href="../competences/competences.html"
+            class="badge-mini"
+            aria-label="Logo"
+            >M</a
+          >
+          <img src="Batterie.png" class="batterie" alt="Batterie" />
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section id="parcours" class="section" aria-labelledby="parcours-title">
+        <div class="container">
+          <header class="section-head">
+            <h1 id="parcours-title" class="title">Mon parcours</h1>
+            <p>Un mix formations + expériences qui m'a amenée au dev.</p>
+          </header>
+
+          <h2 class="subtitle">Mes formations</h2>
+          <div class="cards">
+            <article class="card">
+              <img src="ChatGPT Image 21 oct. 2025, 22_07_39.png" class="img">
+              <h4>Pré-MSc, Master of Science</h4>
+              <p>
+                Epitech, Marseille —
+                <time datetime="2025">2025</time>--<time datetime="2028"
+                  >2028</time
+                >
+              </p>
+            </article>
+            <article class="card">
+              <h4>BTS Conseil & Commercialisation des Solutions Techniques</h4>
+              <p>
+                Euridis BS, Aix-en-Provence —
+                <time datetime="2022">2022</time>-<time datetime="2024"
+                  >2024</time
+                >
+              </p>
+            </article>
+            <article class="card">
+              <h4>2 années de Droit</h4>
+              <p>
+                AMU, Aix-en-Provence —
+                <time datetime="2020">2020</time>-<time datetime="2022"
+                  >2022</time
+                >
+              </p>
+            </article>
+            <article class="card">
+              <h4>Baccalauréat Économique & Social</h4>
+              <p>
+                Lycée Charles Péguy, Marseille —
+                <time datetime="2020">2020</time>
+              </p>
+            </article>
+          </div>
+
+          <h2 class="subtitle">Mes expériences</h2>
+          <div class="cards">
+            <article class="card">
+              <h4>Employée caisse & rayon</h4>
+              <p>
+                Picard, Marseille — CDD —
+                <time datetime="2025-03">Mars 2025</time>-<time
+                  datetime="2025-09"
+                  >Sept. 2025</time
+                >
+              </p>
+            </article>
+            <article class="card">
+              <h4>Assistante administrative & communication</h4>
+              <p>
+                Le Plateau, Montpellier — Stage —
+                <time datetime="2025-03">Mars 2025</time>-<time
+                  datetime="2025-06"
+                  >Juin 2025</time
+                >
+              </p>
+            </article>
+            <article class="card">
+              <h4>Assistante administrative & production</h4>
+              <p>
+                Les Écrans du Sud, Marseille — Alternance —
+                <time datetime="2024-09">Sept. 2024</time>-<time
+                  datetime="2025-01"
+                  >Janv. 2025</time
+                >
+              </p>
+            </article>
+            <article class="card">
+              <h4>Technico-commerciale</h4>
+              <p>
+                EVA, Vitrolles — Alternance —
+                <time datetime="2023-11">Nov. 2023</time>-<time
+                  datetime="2024-09"
+                  >Sept. 2024</time
+                >
+              </p>
+            </article>
+            <article class="card">
+              <h4>Chasseuse de tête IT</h4>
+              <p>
+                TASKFORCE, Meyreuil — Alternance —
+                <time datetime="2022-11">Nov. 2022</time>-<time
+                  datetime="2023-11"
+                  >Nov. 2023</time
+                >
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="controls" role="group" aria-label="Affichage">
+        <button class="btn" id="themeToggle" aria-label="Ajuster la luminosité">
+          🌓
+        </button>
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> Mève Arroseres — Tous droits réservés.
+        </p>
+        <ul class="socials">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/m%C3%A8ve-arroseres-77663a24b/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Meve-Arroseres"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </li>
+          <li><a href="#" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // Heure date en temps réél
+      (function () {
+        const z = (n) => String(n).padStart(2, "0");
+        const H = document.getElementById("nav-heure");
+        const D = document.getElementById("nav-date");
+        const L = document.getElementById("nav-logo");
+        function tick() {
+          const d = new Date();
+          H && (H.textContent = `${z(d.getHours())}:${z(d.getMinutes())}`);
+          D && (D.textContent = `${z(d.getDate())}/${z(d.getMonth() + 1)}`);
+        }
+        tick();
+        setInterval(tick, 30_000);
+        L && (L.textContent = "M");
+      })();
+
+      // luminosité 
+      (function () {
+        const btn = document.getElementById("themeToggle");
+        const levels = [1, 0.85, 0.7];
+        let i = 0;
+        btn.addEventListener("click", () => {
+          i = (i + 1) % levels.length;
+          document.documentElement.style.setProperty("--luminosite", levels[i]);
+        });
+      })();
+
+      // Burger mobile
+      (function () {
+        const nav = document.querySelector(".nav");
+        const burger = document.querySelector(".burger");
+        burger?.addEventListener("click", () => {
+          const open = nav.classList.toggle("open");
+          burger.setAttribute("aria-expanded", String(open));
+        });
+      })();
+
+      // accessibilité et apparitions timeline
+      (function () {
+        const cards = document.querySelectorAll("#parcours .cards .card");
+        cards.forEach((c) => c.setAttribute("tabindex", "0"));
+        document.addEventListener("keydown", (e) => {
+          const list = [...cards];
+          const active =
+            document.activeElement &&
+            document.activeElement.closest("#parcours .card");
+          let i = Math.max(0, list.indexOf(active));
+          if (e.key === "ArrowDown") {
+            i = Math.min(list.length - 1, i + 1);
+            list[i].focus();
+          }
+          if (e.key === "ArrowUp") {
+            i = Math.max(0, i - 1);
+            list[i].focus();
+          }
+        });
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(({ isIntersecting, target }) => {
+              if (isIntersecting) target.classList.add("seen");
+            });
+          },
+          { threshold: 0.15 }
+        );
+        cards.forEach((c) => io.observe(c));
+      })();
+
+      
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

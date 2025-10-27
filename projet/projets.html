@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr" data-light>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mève Arroseres — Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Mève — Développeuse web junior"
+    />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="projet.css" />
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Aller au contenu</a>
+
+    <!-- NAV BAR -->
+    <nav class="nav" aria-label="Barre de navigation DS">
+      <div class="nav-inner">
+        <div class="brand-wrap">
+          <div class="brand">
+            <a href="../accueil/principal.html" aria-label="Accueil"
+              ><span class="name">Mève</span></a
+            >
+          </div>
+          <span class="divider" aria-hidden="true"></span>
+          <button
+            class="burger"
+            aria-label="Ouvrir le menu"
+            aria-controls="mainmenu"
+            aria-expanded="false"
+          >
+            <span class="bar" aria-hidden="true"></span>
+          </button>
+          <ul id="mainmenu" class="mainmenu" role="menubar">
+            <li role="none">
+              <a role="menuitem" href="../propos/propos.html">À propos</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../parcours/parcours.html">Parcours</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../competences/competences.html"
+                >Compétences</a
+              >
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../projet/projets.html">Projets</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../contact/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="status">
+          <a
+            id="nav-heure"
+            href="../propos/propos.html"
+            class="badge-mini"
+            aria-label="Heure"
+            >--:--</a
+          >
+          <a
+            id="nav-date"
+            href="../parcours/parcours.html"
+            class="badge-mini"
+            aria-label="Date"
+            >--/--</a
+          >
+          <a
+            id="nav-logo"
+            href="../competences/competences.html"
+            class="badge-mini"
+            aria-label="Logo"
+            >M</a
+          >
+          <img src="Batterie.png" class="batterie" alt="Batterie" />
+        </div>
+      </div>
+    </nav>
+    <div class="ds" id="app">
+      <!-- Écran haut -->
+      <section class="screen">
+        <div class="files">
+          <div class="bar">
+            <span class="dot"></span> <span id="count">0</span> Projects
+          </div>
+          <ul class="list" id="list" role="listbox" aria-label="Projects"></ul>
+        </div>
+        <div class="sun" aria-hidden="true"></div>
+      </section>
+
+      <!-- Écran bas  -->
+      <section class="screen preview" aria-live="polite">
+        <div class="info">
+          <img id="cover" class="cover" src="" alt="Cover" />
+          <div>
+            <div class="title" id="title">Sélectionne un projet</div>
+            <div class="meta" id="meta"></div>
+          </div>
+        </div>
+        <p class="desc" id="desc">
+          ↑ ↓ pour naviguer.
+        </p>
+        <div class="actions">
+          <button class="btn primary" id="openBtn">Launch (A)</button>
+          <button class="btn ghost" id="readmeBtn">Details (Y)</button>
+        </div>
+      </section>
+    </div>
+<footer class="footer" role="contentinfo">
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> Mève Arroseres — Tous droits réservés.
+        </p>
+        <ul class="socials">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/m%C3%A8ve-arroseres-77663a24b/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Meve-Arroseres"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </li>
+          <li><a href="#" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      /* heure et date */
+      (function () {
+        const z = (n) => String(n).padStart(2, "0");
+        const heureEl = document.getElementById("nav-heure");
+        const dateEl = document.getElementById("nav-date");
+        const logoEl = document.getElementById("nav-logo");
+
+        function tick() {
+          const d = new Date();
+          const h = z(d.getHours()),
+            m = z(d.getMinutes());
+          const day = z(d.getDate()),
+            mon = z(d.getMonth() + 1);
+          heureEl.textContent = `${h}:${m}`;
+          dateEl.textContent = `${day}/${mon}`;
+        }
+        tick();
+        setInterval(tick, 30_000);
+        if (logoEl) logoEl.textContent = "M";
+      })();
+    </script>
+
+    <script>
+            const PROJECTS_DATA = [
+              {
+                    id: 'proj-01',
+                    name: "Hangman",
+                    date: "2025-09-17",
+                    size: "0.8 MB",
+                    cover: "Hangman.png", 
+                    title: "Jeu du Pendu en Python pur",
+                    meta: "Projet de formation | Sept. 2025",
+                    description: "Implémentation du classique 'Jeu du Pendu' en utilisant Python.",
+                    link: "H"
+                },
+                {
+                    id: 'proj-02',
+                    name: "Portfolio 01",
+                    date: "2025-09-27",
+                    size: "1.2 MB",
+                    cover: "Logo en haut.png", 
+                    title: "Portfolio CV (HTML/CSS/JS)",
+                    meta: "Projet de Formation | Sept. 2025",
+                    description: "Ma première version de portfolio, axée sur le design soft et le HTML/CSS simple.",
+                    link: "https://leportfolio1-de-meve.netlify.app/" 
+                },
+                {
+                    id: 'proj-03',
+                    name: "Dev-Jobs",
+                    date: "2025-10-17",
+                    size: "3.5 MB",
+                    cover: "DEVJOBS.png", 
+                    title: "Job Board spécifique dans l'IT",
+                    meta: "Projet de Groupe | Oct. 2025",
+                    description: "Développement d'un Job Board complet en deux semaines avec un API backend avec Node.js, Express et MySql et le design en HTML/CSS/JS natif.",
+                    link: ""
+                },
+                {
+                    id: 'proj-04',
+                    name: "Portfolio (actuel)",
+                    date: "2025-10-24",
+                    size: "0.8 MB",
+                    cover: "img/cover-oie.png", // REMPLACER par une vraie image
+                    title: "Portfolio style Nintendo DS",
+                    meta: "Projet de formation | Mai 2024",
+                    description: "Ma dernière version de portfolio, axée sur le design de la Nintendo DS et le HTML/CSS/JS pur.",
+                    link: ""
+                },
+            ];
+        </script>
+        
+        <script>
+            (function () {
+                const listEl = document.getElementById("list"); // récupére UL
+                const countEl = document.getElementById("count"); // récupére SPAN
+                
+                // Éléments de l'écran du bas à mettre à jour
+                const coverEl = document.getElementById("cover"); // récupére IMG
+                const titleEl = document.getElementById("title"); // récupére div titre
+                const metaEl = document.getElementById("meta"); // récupére p
+                const descEl = document.getElementById("desc"); // récupére div catégorie
+                const openBtn = document.getElementById("openBtn"); // récupére bouton A
+
+                let selectedIndex = -1; // garde mémoire index du projet sélect
+
+                countEl.textContent = PROJECTS_DATA.length; // maj le compteur
+
+                // Remplir la liste (HTML)
+                PROJECTS_DATA.forEach((project, index) => { // BOUCLE pour project
+                    const li = document.createElement("li"); 
+                    li.setAttribute("role", "option");  // option séléctionnable
+                    li.classList.add("row");
+                    li.dataset.index = index; // 'data-index' pour savoir quel projet c'est
+
+                    li.innerHTML = `
+                        <span class="idx">${String(index + 1).padStart(2, '0')}.</span>
+                        <span class="name">${project.name}</span>
+                        <span class="size">${project.size}</span>
+                    `;
+                    
+                    listEl.appendChild(li);
+                });
+
+                // Fonction maj l'écran du bas
+                function updatePreview(project) {
+                    coverEl.src = project.cover; // maj src img
+                    coverEl.alt = project.name + " cover"; // maj src img
+                    titleEl.textContent = project.title; // maj text img
+                    metaEl.textContent = project.meta; 
+                    descEl.textContent = project.description;
+                    
+                    // gérer action du bouton "Launch (A)"
+                    openBtn.onclick = () => window.open(project.link, '_blank'); // btn A ouvert
+                }
+
+                // gérer la sélection 
+                function selectProject(index) {
+                    if (index < 0 || index >= PROJECTS_DATA.length) return; // Sécurité
+
+                    // désélectionne ancien élément existant ?
+                    const oldSelected = listEl.querySelector('[aria-selected="true"]');
+                    if (oldSelected) {
+                        oldSelected.removeAttribute("aria-selected");
+                    }
+
+                    // sélectionne nouvel élément 
+                    const newSelected = listEl.querySelector(`.row[data-index="${index}"]`);
+                    if (newSelected) {
+                        newSelected.setAttribute("aria-selected", "true");
+                        newSelected.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        newSelected.focus();
+                    }
+
+                    selectedIndex = index;
+                    updatePreview(PROJECTS_DATA[index]);
+                }
+                
+                // évenement clic 
+                listEl.addEventListener('click', (e) => {
+                    // ligne qui remonte quand on click autre part
+                    const row = e.target.closest('.row');
+                    if (row) {
+                        // récupere valeur data_index et convertit en nombre (3 projets)
+                        const index = parseInt(row.dataset.index);
+                        selectProject(index);
+                    }
+                });
+
+
+                // nav clavier (ArrowUp/Down)
+                document.addEventListener("keydown", (e) => {
+                    let newIndex = selectedIndex;
+
+                    if (e.key === "ArrowDown") {
+                        e.preventDefault();
+                        newIndex = Math.min(PROJECTS_DATA.length - 1, selectedIndex + 1);
+                    } else if (e.key === "ArrowUp") {
+                        e.preventDefault();
+                        newIndex = Math.max(0, selectedIndex - 1);
+                    } else if (e.key === "Enter" && selectedIndex !== -1) {
+                        e.preventDefault();
+                        openBtn.click(); // clic sur le bouton Launch (A)
+                    }
+
+                    if (newIndex !== selectedIndex) {
+                        selectProject(newIndex);
+                    }
+                });
+
+
+                // sélection premier projet au chargement
+                if (PROJECTS_DATA.length > 0) {
+                    selectProject(0);
+                }
+            })();
+        </script>
+    </body>
+</html>
+  </body>
+</html>

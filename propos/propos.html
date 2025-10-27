@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr" data-light>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>À propos — Mève Arroseres</title>
+    <meta
+      name="description"
+      content="À propos de Mève — Développeuse web junior"
+    />
+    <link rel="icon" type="image/png" href="../img/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="propos.css" />
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Aller au contenu</a>
+
+    <!-- NAV BAR  -->
+    <nav class="nav" aria-label="Barre de navigation DS">
+      <div class="nav-inner">
+        <div class="brand-wrap">
+          <div class="brand">
+            <a href="../accueil/principal.html" aria-label="Accueil"
+              ><span class="name">Mève</span></a
+            >
+          </div>
+          <span class="divider" aria-hidden="true"></span>
+          <button
+            class="burger"
+            aria-label="Ouvrir le menu"
+            aria-controls="mainmenu"
+            aria-expanded="false"
+          >
+            <span class="bar" aria-hidden="true"></span>
+          </button>
+          <ul id="mainmenu" class="mainmenu" role="menubar">
+            <li role="none">
+              <a
+                role="menuitem"
+                href="../propos/propos.html"
+                class="active"
+                aria-current="page"
+                >À propos</a
+              >
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../parcours/parcours.html">Parcours</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../competences/competences.html"
+                >Compétences</a
+              >
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../projet/projets.html">Projets</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="../contact/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="status">
+          <a
+            id="nav-heure"
+            href="../propos/propos.html"
+            class="badge-mini"
+            aria-label="Heure"
+            >--:--</a
+          >
+          <a
+            id="nav-date"
+            href="../parcours/parcours.html"
+            class="badge-mini"
+            aria-label="Date"
+            >--/--</a
+          >
+          <a
+            id="nav-logo"
+            href="../competences/competences.html"
+            class="badge-mini"
+            aria-label="Logo"
+            >M</a
+          >
+          <img src="Batterie.png" class="batterie" alt="Batterie" />
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <section id="apropos" class="section" aria-labelledby="apropos-title">
+        <div class="container grid"></div>
+      </section>
+      <div class="ds">
+        <div class="col">
+          <h3 id="apropos-title" class="title">À propos</h3>
+        </div>
+        <div class="ds-top">
+          <div class="ds-slot" aria-hidden="true"></div>
+          <div class="ds-led" aria-hidden="true"></div>
+          <div class="screen" id="screen">
+            <div class="carousel">
+              <div
+                class="carousel__content"
+                id="rotor"
+                aria-label="Contrôles du carrousel : utiliser les flèches"
+              >
+                <section
+                  class="card"
+                  aria-label="Présentation et objectifs professionnels"
+                >
+                  <h3>QUI JE SUIS</h3>
+                  <div class="card-overlay">
+                    <div class="card-description">
+                      <p>
+                        Étudiante Epitech (Pré-MSc). Je me réoriente vers
+                        l'informatique pour sa logique et la résolution de
+                        problèmes.
+                      </p>
+                      <p>
+                        <strong>Objectif Pro :</strong> Alternance (Marseille)
+                        en <strong>Développement Logiciel</strong> pour une
+                        montée en compétences rapide, avec une cible à terme en
+                        <strong>Cybersécurité</strong> (sécu applicative,
+                        audit).
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                <section
+                  class="card"
+                  aria-label="Compétences techniques et outils"
+                >
+                  <h3>MES HOBBIES</h3>
+                  <div class="card-overlay">
+                    <div class="card-description">
+                      <ul class="list bullets">
+                        <li>
+                          <strong>Cinéma :</strong> Horreur, Super-Héro, Romance.
+                        </li>
+                        <li>
+                          <strong>Actualité :</strong> Politique/Géopolitique.
+                        </li>
+                        <li><strong>Sport :</strong> Badminton.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="card" aria-label="Qualités et soft skills">
+                  <h3>SOFT SKILLS</h3>
+                  <div class="card-overlay">
+                    <div class="card-description">
+                      <ul class="list bullets">
+                        <li>Rigoureuse & curieuse dans les projets.</li>
+                        <li>
+                          Autonome & team player (j'aime les défis collectifs).
+                        </li>
+                        <li>Sensibilité à l'Accessibilité & UX.</li>
+                        <li>Apprentissage quotidien du code (1-2h/j).</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="controls" role="group" aria-label="Contrôles du carrousel">
+        <button class="btn" id="prev" aria-label="Précédent">◀</button>
+        <button class="btn" id="next" aria-label="Suivant">▶</button>
+        <button class="btn" id="themeToggle" aria-label="Ajuster la luminosité">
+          🌓
+        </button>
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> Mève Arroseres — Tous droits réservés.
+        </p>
+        <ul class="socials">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/m%C3%A8ve-arroseres-77663a24b/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Meve-Arroseres"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </li>
+          <li><a href="#" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      // Heure & Date
+      (function () {
+        const z = (n) => String(n).padStart(2, "0");
+        const H = document.getElementById("nav-heure");
+        const D = document.getElementById("nav-date");
+        const L = document.getElementById("nav-logo");
+        function tick() {
+          const d = new Date();
+          H && (H.textContent = `${z(d.getHours())}:${z(d.getMinutes())}`);
+          D && (D.textContent = `${z(d.getDate())}/${z(d.getMonth() + 1)}`);
+        }
+        tick();
+        setInterval(tick, 30_000);
+        L && (L.textContent = "M");
+      })();
+
+      // bouton luminosité
+
+      const themeToggle = document.getElementById("themeToggle"); //le bouton
+      const levels = [1, 0.85, 0.7]; // normal → un peu plus sombre → sombre
+      let idx = 0;
+      themeToggle.addEventListener("click", () => {
+        idx = (idx + 1) % levels.length; // 3ᵉ clic = retour à 1
+        document.documentElement.style.setProperty("--luminosite", levels[idx]);
+      });
+
+      // burger menu mobile
+
+      const nav = document.querySelector(".nav");
+      const burger = document.querySelector(".burger");
+      burger?.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        burger.setAttribute("aria-expanded", String(open));
+      });
+
+      // Carrousel
+      (function () {
+        const root = document.documentElement;
+        const screen = document.getElementById("screen");
+        const prev = document.getElementById("prev");
+        const next = document.getElementById("next");
+        let angle = 0,
+          STEP = -120;
+
+        const applyRotation = () => {
+          root.style.setProperty("--angle", angle + "deg");
+          const cards = document.querySelectorAll(".carousel__content .card");
+          cards.forEach((card, index) => {
+            let cardRotation = angle + index * STEP * -1;
+            card.style.setProperty(
+              "--current-card-rotation",
+              cardRotation + "deg"
+            );
+          });
+        };
+
+        const goNext = () => {
+          angle += STEP;
+          applyRotation();
+        };
+        const goPrev = () => {
+          angle -= STEP;
+          applyRotation();
+        };
+
+        screen.addEventListener("click", goNext);
+        next.addEventListener("click", goNext);
+        prev.addEventListener("click", goPrev);
+
+        window.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight") goNext();
+          if (e.key === "ArrowLeft") goPrev();
+          if (e.key === " " || e.key === "Enter") goNext();
+        });
+
+        applyRotation();
+      })();
+    </script>
+  </body>
+</html>
